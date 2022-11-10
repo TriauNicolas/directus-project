@@ -1,21 +1,22 @@
 import styles from '../../styles/Home.module.css';
+import Link from 'next/link';
 
-export default function TrailerCard({DTrailer}) {
+const TrailerCard = ({DTrailer}) => {
   const imageConcat = `https://ia47fgbo.directus.app/assets/${DTrailer.image}`;
 
   return (
-    <a href="#" className={styles.card} style={{
-        backgroundImage: `url(${imageConcat})`,
-        backgroundSize: 'cover',
-        filter: 'blur(10px)'
-        }}>
-      {/* <img src={imageConcat} class="card-img-top" alt="..." /> */}
-      <div>
-        <h2>{DTrailer.title}</h2>
-        <p>{DTrailer.synopsis}</p>
-        <p>The note : {DTrailer.note} / 5</p>
-        <a href="#">See the trailer</a>
-      </div>
-    </a>
+    <div>
+      <Link href={'/' + DTrailer.slug} className={styles.card} key={DTrailer.id}>
+        <img src={imageConcat} className={styles.backgroundImg} alt={DTrailer.title}></img>
+        {/* <img src={imageConcat} class="card-img-top" alt="..." /> */}
+        <div className={styles.contentCard}>
+          <h2>{DTrailer.title}</h2>
+          <p>{DTrailer.synopsis}</p>
+          <p>The note : {DTrailer.note} / 5</p>
+        </div>
+      </Link>
+    </div>
   )
 }
+
+export default TrailerCard;
