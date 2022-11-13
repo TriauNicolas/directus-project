@@ -65,6 +65,15 @@
     Bitstream Vera Sans Mono, Courier New, monospace;
 }
 
+.mainContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1920px;
+}
+
 .grid {
   display: flex;
   align-items: center;
@@ -101,9 +110,9 @@
 .card h2 {
   margin: 0 0 1rem 0;
   font-size: 1.25rem;
-  overflow: hidden;
+  /* overflow: hidden;
   white-space: nowrap;
-  text-overflow: ellipsis;
+  text-overflow: ellipsis; */
   max-width: 200px;
 }
 
@@ -113,7 +122,7 @@
   line-height: 1.5;
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 6;
   -webkit-box-orient: vertical;
 }
 
@@ -126,7 +135,10 @@
   position: absolute;
   top: 100%;
   left: 0;
-  height: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
   padding: 1rem;
   background: rgba(0, 0, 0, .9);
   transition: top .5s ease-in-out;
@@ -134,7 +146,7 @@
 }
 
 .card:hover .contentCard {
-  top: 50%;
+  top: 0%;
 }
 
 .logo {

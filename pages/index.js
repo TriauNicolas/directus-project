@@ -5,12 +5,12 @@ const Home = ({ trailers }) => {
   const trailersData = trailers.data;
 
   return (
-    <div>
+    <div className={styles.mainContainer}>
       <h1>HEADER</h1>
       <div className={styles.grid}>
-        {trailersData.map(trailer => {
+        {trailersData.map((trailer, key) => {
           return (
-            <TrailerCard DTrailer={trailer} />
+            <TrailerCard DTrailer={trailer} key={key} />
           )
         })}
       </div>

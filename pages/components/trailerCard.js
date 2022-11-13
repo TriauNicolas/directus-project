@@ -6,7 +6,7 @@ const TrailerCard = ({DTrailer}) => {
 
   return (
     <div>
-      <Link href={'/' + DTrailer.slug} className={styles.card} key={DTrailer.id}>
+      <Link href={'/' + DTrailer.slug} className={styles.card} >
         <img src={imageConcat} className={styles.backgroundImg} alt={DTrailer.title}></img>
         {/* <img src={imageConcat} class="card-img-top" alt="..." /> */}
         <div className={styles.contentCard}>
